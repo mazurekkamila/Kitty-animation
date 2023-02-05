@@ -3,31 +3,52 @@
 <html lang ="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Kitty walking through the jungle">
+    <meta name="description" content="Orange big kitty sighs">
     <meta name="keywords" content="cat, kitty, animation, HTML, CSS, JS">
     <meta name="author" content="Kamila Mazurek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"/>
-    <title>Animated kitty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,400&display=swap" rel="stylesheet">
+        <title>Animated kitty</title>
   </head>
   <body>
-    <div>
+    <header>
       <h1> Animated kitty </h1>
-        <p> This animation is based on CSS sprites</p>
-    </div>
-    <div id="sky">
-      <div id="clouds">
-        <div class="cloud"></div>
-        <div class="cloud"></div>
-        <div class="cloud"></div>
+      <p> This animation presents a hungry ginger cat that screams for food!</p>
+    </header> 
+    <main>
+    <div class="background">
+      <div id="cat">
+        <div class="cat-head">
+          <div class="left-ear">
+            <div class="inside-ear-l"></div>
+          </div>
+          <div class="right-ear">
+            <div class="inside-ear-r"></div>
+          </div>
+          <div class="left-eye">
+            <div class="eyes"></div>
+          </div>
+          <div class="right-eye">
+            <div class="eyes"></div>
+          </div>
+          <div class="mouth"></div>
+          <div class="nose"></div>
+        </div>
+        <div class="cat-body">
+          <div class="left-paw"></div>
+          <div class="right-paw"></div>
+          <div class="tail"></div>
+          
+        </div>
+        <div class="cloud"> Feed me! </div>
+        <div class="cat-shadow"></div>
       </div>
-      <div id="sun"></div>
-    </div>
-    
-    <div id="cat">
-      <div class="eye"></div>
-      <div class="eye"></div>
-      <div class="tail"></div>
-    </div>
-      </body>
+   </div>
+   </main>
+   <script src="cat-animation.js"></script>
+  </body>
+
 </html>
