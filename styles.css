@@ -1,45 +1,291 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(190, 190, 246);
+}
+
+h1, p {
+  text-align: center;
+  font-family: 'Roboto', sans-serif ;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+main, footer{
+  display: block;
+}
+
+.background {
+  height: 600px;
+  width: 600px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
 
 #cat {
-  width: 200px;
-  height: 200px;
-  background-color: red;
   position: relative;
+  top: 100px;
+  left: 200px;
 }
 
-.eye {
-  width: 50px;
-  height: 50px;
-  background-color: white;
+.cat-head {
+  background-color: chocolate;
+  height: 100px;
+  width: 160px;
+  border-radius: 45px;
+
+}
+
+.left-ear, .right-ear {
+  height: 0;
+  width: 0;
+  border-bottom: 50px chocolate solid;
+  border-left: 30px transparent solid;
+  border-right: 30px transparent solid;
+  position: relative;
+  z-index: -1;
+}
+
+.left-ear{
+  bottom: 34px;
+  transform: rotate(-25deg);
+}
+
+.right-ear{
+  bottom: 84px;
+  left: 100px;
+  transform: rotate(25deg);
+}
+
+.inside-ear-l{
+  height: 0;
+  width: 0;
+  border-bottom: 50px mistyrose solid;
+  border-left: 30px transparent solid;
+  position: relative;
+  right: 30px;
+}
+
+.inside-ear-r{
+  height: 0;
+  width: 0;
+  border-bottom: 50px mistyrose solid;
+  border-right: 30px transparent solid;
+  position: relative;
+  right: 0px;
+}
+
+.left-eye, .right-eye{
+  background-color: seagreen;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
+  position: relative; 
+  animation: blink-animation 2s steps(5, start) infinite;
+  -webkit-animation: blink-animation 3s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+} 
+
+.left-eye{
+  bottom: 80px;
+  left: 35px;
+}
+
+.right-eye{
+  bottom: 110px;
+  left: 95px;
+}
+
+.eyes {
+  background-color: black;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: relative;
+  top: 2px;
+  left: 5px
+}
+
+.nose {
   position: absolute;
+  background-color: white;
+  height: 25px;
+  width: 30px;
+  border-radius: 50%;
   top: 50px;
+  left: 60px;
+  box-shadow: 13px 0 white;
 }
 
-.eye:first-child {
-  left: 50px;
+.nose::before{
+  content:"";
+  width: 16px;
+  height: 8px;
+  position: absolute;
+  background: white;
+  left: 13.5px
 }
 
-.eye:last-child {
-  right: 50px;
+.nose::after {
+  content: "";
+  height: 0;
+  width: 0;
+  border-top: 8px rgb(224, 138, 173) solid;
+  border-left: 5px transparent solid;
+  border-right: 5px transparent solid;
+  position: absolute;
+  left: 17px;
+}
+
+.mouth {
+  background-color:rgb(43, 41, 41);
+  height: 20px;
+  width: 23px;
+  position: absolute;
+  border-radius: 0 0 5px 5px;
+  top: 62px;
+  left: 70px;
+  animation: mouth-move 2s infinite;
+  -webkit-animation: mouth-move 2s infinite;
+  transform-origin: top;
+}
+
+@keyframes mouth-move {
+  50% {
+    transform: scaleY(0.8);
+  }
+}
+
+@-webkit-keyframes mouth-move {
+  50% {
+    transform: scaleY(0.8);
+  }
+}
+ 
+.cat-body {
+  background-color: chocolate;
+  height: 180px;
+  width: 170px;
+  position:relative;
+  right: 6px;
+  bottom: 2px;
+  border-radius: 65% 65% 10% 5%;
+  animation: meow 2s infinite;
+  -webkit-animation: meow 2s infinite;
+  transform-origin: bottom right left;
+}
+
+@keyframes meow {
+  50%{
+    transform: scale(0.9, 1)
+  }
+}
+
+@-webkit-keyframes meow {
+  50%{
+    transform: scale(0.9, 1)
+  }
+}
+
+.left-paw, .right-paw {
+  background-color: chocolate;
+  height: 20px;
+  width: 33px;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+
+.left-paw{
+  top: 175px;
+  left: 10px;
+}
+
+.right-paw{
+  top: 155px;
+  left: 125px;
 }
 
 .tail {
-  width: 20px;
-  height: 50px;
-  background-color: red;
+  background-color: chocolate;
+  width: 180px;
+  height: 25px;
+  position: relative;
+  top: 105px;
+  right: 165px;
+  border-radius: 50% 10% 30% 50%;
+}
+
+
+.cat-shadow{
+  background-color: rgba(10, 10, 10, 0.05);
+  height: 60px;
+  width: 250px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 25px;
+  right: 50px;
+  z-index: -1;
+  animation: shadow-move 2s infinite;
+  -webkit-animation: shadow-move 2s infinite;
+  transform-origin: top;
+}
+
+@keyframes shadow-move{
+  50% {
+    transform: scale(0.7, 1)
+  }
+}
+
+@-webkit-keyframes shadow-move{
+  50% {
+    transform: scale(0.7, 1)
+  }
+}
+
+.cloud {
+  color: rgba(0, 0, 0, 0.584);
+  font-size: 20px;
+  font-style: italic;
+  padding: 5px 10px;
+  background-color: rgba(250, 250, 250, 0.7);
+  width: 80px;
+  height: 30px;
   position: absolute;
-  bottom: 0;
-  left: 90px;
-  transform: rotate(45deg);
+  left: 95px;
+  top: 80px;
+  border-radius: 5px 50px 50px 50px;
+  border: solid 1px rgba(250, 250, 250, 0.8);
+  animation: cloud-moves 2s infinite normal;
+  -webkit-animation: cloud-moves 2s infinite normal;
+  transform-origin: left;
 }
 
-
-@keyframes walk {
-  0% { transform: translateX(0) }
-  100% { transform: translateX(100px) }
+@keyframes cloud-moves {
+  50% {
+    transform: scale(0.6, 1.2)
+  }
 }
 
-#cat {
-  animation: walk 1s linear infinite;
+@-webkit-keyframes cloud-moves {
+  50% {
+    transform: scale(0.6, 1.2)
+  }
 }
 
